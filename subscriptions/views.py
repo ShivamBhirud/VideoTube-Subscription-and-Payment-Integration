@@ -86,8 +86,7 @@ class PaymentView(View):
         else:
             error = str('Payment NOT done. Next time please check the' +
             'credentials carefully before submitting.')
-            return render(request, 'subscriptions/home.html', {'msg':msg})
-        # return JsonResponse(charge)
+            return render(request, 'subscriptions/home.html', {'msg':error})
 
 
 # Manage subscription plan related views

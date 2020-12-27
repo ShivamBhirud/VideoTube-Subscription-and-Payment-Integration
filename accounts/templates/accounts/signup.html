@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet">
 
 </head>
+<title></title>
 
 <body class="fullscreen-centered page-register">
 
@@ -23,15 +24,11 @@
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title" style="font-weight: bolder;">
-                  Sign Up
-                </h3>
-            </div>
             <div class="panel-body">
               <form enctype="multipart/form-data" method='POST' role="form">
                 {% csrf_token %}
                 <fieldset>
+                  <legend class="panel-title" style="font-weight: bolder;">SignUp</legend>
                   <div class="form-group">
                     <div class="input-group input-group-lg">
                       <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>

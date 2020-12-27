@@ -33,8 +33,6 @@ class LoginView(View):
                 return HttpResponse('Inactive user.')
         else:
             return HttpResponseRedirect('signup')
-        
-        # return render(request, 'subscriptions/home.html')
 
     # Handle GET request if user signup even when one is already logged in
     def get(self, request):

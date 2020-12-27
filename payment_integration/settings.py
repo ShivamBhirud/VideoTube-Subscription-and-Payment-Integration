@@ -14,7 +14,7 @@ SECRET_KEY = 'f^r0o*ry-(joc-z%w$(6fk_55=h_s)&0m4n3*pv#02scgujfo)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -125,5 +125,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
-STRIPE_PUBLIC_KEY = str('YOUR STRIPE PUBLIC KEY')
-STRIPE_PRIVATE_KEY = str('YOUR STRIPE SECRET KEY')
+STRIPE_PUBLIC_KEY = str('YOUR STRIPE PUBLIC KEY HERE')
+STRIPE_PRIVATE_KEY = str('YOUR STRIPE SECRET KEY HERE')
