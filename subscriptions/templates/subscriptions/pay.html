@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<!-- show error if user tries to login into other user when one is already logged in. -->
+
+{% if status == 201 %}
+<br>
+<h6 style="color:green"></h6>Initiate Payment</h6>
+<br>
+<br>
+
+<form action="{% url 'checkout' charges=charges id=data.id %}" method="POST">
+    <br>
+        {% csrf_token %}
+        <div class="card text-center">
+            <article class="card-header">
+                <label>
+                    <span>
+                        Amount to be paid is {{ charges }} Cents
+                    </span>
+                </label>
+            </article>
+            <div class="card-body">
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key = "{{ key }}"
+                data-image = "https://tinyurl.com/y3zspzmv"
+                data-description = "TEXT"
+                data-amount = "{{ charges }}"
+                data-locale = "auto"></script>
+            </div>
+        </div>
+    <br>
+</form>
+
+
+
+
+
+{% else %}
+<h6 style="color:red">Status {{status}}, Some error occurred. Try Again!</h6>
+{% endif %}
+
+
+{% endblock %}

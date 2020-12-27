@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+{% if msg %}
+<br>
+<h6 style="color:green">{{ msg }}</h6>
+<br>
+<br>
+{% endif %}
+
+
+<div class="col-md-12 text-center">
+  <br>
+  <h1>My Plans</h1>
+</div>
+
+{% for data in data %}
+    <form action="{% url 'update_plan' id=data.id %}" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    <br>
+    <div class="card text-center" style="border:solid grey;">
+        <h3 class="card-header">Plan Duration: {{data.plan}} Month</h3>
+        <div class="card-body">
+            {% if data.expiry_date %}
+                <h4>Your VideoTube Plan is active till: {{data.expiry_date}}</h4>
+            {% else %}
+                <h4>Your VideoTube Plan is paused. Remaining duration is: {{data.remaining_days}} Days</h4>
+            {% endif %}
+            <br>
+            <div class="col-md-12 text-center"> 
+                {% if data.is_active %}
+                    <button class="btn btn-primary" name="plan_status" value="pause" type="submit">Pause</button>
+                {% else %}
+                    <button class="btn btn-primary" name="plan_status" value="activate" type="submit">Resume</button>
+                {% endif %}
+            </div>
+            <br>
+        </div>
+    </div>
+    </form>
+{% endfor %}
+{% endblock %}
