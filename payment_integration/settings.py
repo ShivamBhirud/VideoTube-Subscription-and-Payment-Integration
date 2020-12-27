@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'f^r0o*ry-(joc-z%w$(6fk_55=h_s)&0m4n3*pv#02scgujfo)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -125,7 +125,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
-STRIPE_PUBLIC_KEY = str('pk_test_51I2YfRJolvEsLuXc6ZW12tCjbdG2t'+
-'sGA2m8L9KjNUJAeePKFUxI0qA6Vgqh4nMzIjvVRntySvYbMC49APlCDoKej00ubL1EMPb')
-STRIPE_PRIVATE_KEY = str('sk_test_51I2YfRJolvEsLuXckuhomMepC0YVnGXuGvoGk' +
-'mfAtZQeZVvf87r2aATChJAuELlD0I1EFBwg9YTNlZjMeFdgIny500ZRkCle9g')
+STRIPE_PUBLIC_KEY = str('YOUR STRIPE PUBLIC KEY')
+STRIPE_PRIVATE_KEY = str('YOUR STRIPE SECRET KEY')
